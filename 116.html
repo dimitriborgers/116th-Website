@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>116th & Partners</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="/design.css" type = "text/css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="design.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("Pictures/frontPage.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .module p.collapse[aria-expanded="false"] {
+            display: block;
+            height: 40px !important;
+            overflow: hidden;
+        }
+
+        .module p.collapsing[aria-expanded="false"] {
+            height: 40px !important;
+        }
+
+        .module a.collapsed:after  {
+            content: '+ Show More';
+        }
+
+        .module a:not(.collapsed):after {
+            content: '- Show Less';
+        }
+        .crop {
+            height: 332px;
+            width: 332px;
+            overflow: hidden;
+        }
+        .crop img {
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        .cropSmall {
+            height: 212px;
+            width: 212px;
+            overflow: hidden;
+        }
+        .cropSmall img {
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">116th & Partners</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+                <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> BOARD</a>
+                <a href="#pastMembers" class="w3-bar-item w3-button"><i class="fa fa-user"></i> PAST MEMBERS </a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">BOARD</a>
+        <a href="#pastMembers" onclick="w3_close()" class="w3-bar-item w3-button">PAST MEMBERS</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+    </nav>
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-left w3-text-white" style="padding:48px">
+            <span class="w3-jumbo w3-hide-small">Start investing now</span><br>
+            <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start investing now</span><br>
+            <span class="w3-large">Join a group of dedicated students learning to invest.</span>
+        </div>
+        <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-container" style="padding:128px 16px" id="about">
+        <h3 class="w3-center">ABOUT THE GROUP</h3>
+        <p class="w3-center">Going into its fourth year, 116th & Partners LLC is an established, collaborative student led and financed fund on Columbia's campus that actively manages over $50,000.</p>
+        <div class="w3-row-padding w3-center" style="margin-top:64px">
+            <div class="w3-col m4">
+                <i class="fa fa-globe-americas w3-margin-bottom w3-jumbo w3-center"></i>
+                <p class="w3-large">Who We Are</p>
+                <p>116th & Partners LLC is a student led and financed fund that seeks to provide real life investment experience and achieve above market returns. Officially founded over the summer of 2015, we are made up of passionate investors with a diverse background of financial experience. Started by three co-founders, the board has grown to be currently over 15 people with many former members now also working post-graduation.</p>
+            </div>
+            <div class="w3-col m4">
+                <i class="fa fa-book-open w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Our Story</p>
+                <p>116th & Partners LLC developed from the co-founders' yearning to have a unique investment opportunity on campus that included a portfolio made up of long and short positions, value and growth selections, as well as hedges and alternative investments. While the goal is undoubtedly to achieve above market returns, the group seeks to provide investment experience in various sectors of the market. Furthermore, with such a small group, each member will carry significant responsibility.</p>
+
+                <p>While we were formerly known as Morningside Capital Partners LLC, as you can tell, we have changed our name to 116th & Partners LLC. Despite this change, it is worth noting that we still operate in the exact same manner as before. Please feel free to reach out to us on our "Contact" page with any inquiries or comments in regards to this amendment.</p>
+            </div>
+            <div class="w3-col m4">
+                <i class="fa fa-lightbulb w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Investment Philosophy</p>
+                <p>116th & Partners takes a disciplined and diversified approach to their investment strategy. The fund is comprised of two portfolios - growth and value. Each portfolio has around 8-10 securities to ensure that every pick impacts our overall fund, yet risk is minimized by not having more than a 10% impact. The value fund will naturally have investments with longer time horizons that are selected for being deemed undervalued based on fundamental valuation techniques. The growth section will be more actively managed and will also include short positions and options. All profits will be reinvested.</p>
+
+                <p>One member a week will be responsible for pitching a stock, which will be subsequently voted on by the board. To learn more about the voting process or meetings more generally, feel free to send us your inquiry in the "Contact" section.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promo Section "Statistics" -->
+    <div class="w3-container w3-row w3-center w3-light-grey w3-padding-64">
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">9</span>
+            <br>Board Members
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">20+</span>
+            <br>Investments
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">35%</span>
+            <br>Profit
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">36+</span>
+            <br>Years of Total Experience
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="w3-container" style="padding:128px 16px" id="team">
+        <h3 class="w3-center">BOARD</h3>
+
+        <!-- First Row -->
+        <div class="w3-row-padding" style="margin-top:64px">
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="crop">
+                        <img src="Pictures/Spencer.png" alt="Spencer">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Spencer Papay</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse1" aria-expanded="false">
+                                Spencer Papay is a co-president of 116th & Partners LLC. Having joined the fund as a sophomore in fall 2016, he has previously served as Head of Recruiting and Head of Technology, Media, and Telecom. A senior at Columbia University, Spencer is majoring in Economics. This past summer, Spencer conducted research for Joel Greenblatt of Gotham Asset Management and Columbia Business School. This coming summer, Spencer will be an investment banking summer analyst at Citi. On campus, Spencer is on the board of the Columbia Ski Team and is a senior editor of the Columbia Economics Review. In his free time, he enjoys rock climbing and traveling.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Emanuel.jpeg" alt="Emanuel">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Emanuel Marcano</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse2" aria-expanded="false">
+                                Emanuel Marcano is a board member at 116th & Partners LLC who joined the team in the fall of 2016 and is co-head of Emerging Markets. As a junior at Columbia University, Emanuel is majoring in Financial Economics. This past summer, Emanuel worked as an Investment Banking Summer Analyst for the Latin America Financing team at Goldman Sachs. He will return to intern there again this upcoming summer. Previously, Emanuel worked at Ecoanalitica, Venezuela’s top economic advisory firm, and North Brookside Capital, a small private equity search fund. Previous to attending Columbia, Emanuel grew up between Mexico City, New York City, and Caracas. In his free time, he enjoys film and literature.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Sam.jpeg" alt="Sam">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Samantha Breakstone</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse3" aria-expanded="false">
+                                Samantha Breakstone is a board member of 116th & Partners LLC. A junior at Columbia University, Samantha is majoring in Operations Research: Engineering Management Systems. Samantha is an incoming investment banking summer analyst at Citi. This past summer, she worked as a financial services advisory intern at Ernst & Young. The previous summer, she interned at TradeStation Securities. On campus, Samantha is an organizational committee member of Columbia’s Multicultural Business Association and a marketing committee member of the Columbia Women’s Business Society.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Daniel.png" alt="Daniel">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Daniel Moreno</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse4" aria-expanded="false">
+                                Daniel Moreno is a board member of 116th & Partners LLC who joined in the Fall of 2017 as an analyst in the Emerging Markets coverage group. As a sophomore at Columbia University, he is majoring in Applied Mathematics with minors in Economics and Operations Research. This past summer, he worked as a business analyst at The Breakthrough, a top management consulting firm in Bogota, Colombia. On campus Daniel is a part of the Lion Credit Union, the Society for International Undergraduates, and Columbia Por-Colombia. In his spare time, Daniel enjoys food, travel, and watching TV series.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="w3-row-padding" style="margin-top:64px">
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="crop">
+                        <img src="Pictures/Grant.jpeg" alt="Grant">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Grant Carmain</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse5" aria-expanded="false">
+                                Grant Carmain is a board member of 116th & Partners LLC and joined the team in the Fall of 2017. As a sophomore in Columbia College from Houston, Texas, he is studying Financial Economics and Statistics. This past summer he interned at Petrie Partners, an energy-focused boutique investment bank. In his free time, Grant enjoys reading, fishing, and listening to classic rock.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Michael.png" alt="Michael">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Michael Chu</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse6" aria-expanded="false">
+                                Michael Chu is a board member of 116th and Partners LLC and joined the organization in the Fall of 2017. He is a part of the Consumer Retail Group and is a Sophomore in Columbia College pursuing a major in Economics and Math with a concentration in Sustainable Development. This past summer, he worked at Forbes Media, performing comparable company analyses of private and public companies to help analyze net worth of individuals for the annual Forbes 400 magazine issue. The summer before that, he worked at Proof and Company, a craft spirits distributor based in Singapore which specializes in bar management and design. His project helped develop one of the current best bars in the world, Atlas Bar SG. Michael is also a Resident Advisor at Columbia University and is an avid tennis fan.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Jackson.png" alt="Jackson">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Jackson Storey</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse7" aria-expanded="false">
+                                Jackson Storey is a board member of 116th & Partners LLC, who joined the team in the Fall of 2017. As a freshman at Columbia University, he intends to major in Financial Economics. Jackson is also a part of Columbia's Cross Country and Track and Field team, and in his free time, he enjoys surfing and scuba diving.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <div class="crop">
+                        <img src="Pictures/Matthew.jpeg" alt="Matthew">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Matthew Simons</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse8" aria-expanded="false">
+                                Matthew Simons is a board member of 116th & Partners LLC who joined the team in the Fall of 2017. As a freshman in Columbia College, he is intending to major in Economics-Mathematics. On campus, Matthew is an active debater in the Columbia Debate Society and a contributor for the Economics Review on campus. Outside of debate, he enjoys spending copious amounts of time playing snake at playsnake.org.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row Three -->
+        <div class="w3-row-padding" style="margin-top:64px">
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="crop">
+                        <img src="Pictures/Vera.jpeg" alt="Vera">
+                    </div>
+                    <div class="w3-container">
+                        <h3>Vera Wang</h3>
+                        <div class="module">
+                            <p class="collapse" id="collapse9" aria-expanded="false">
+                                Vera Wang is a first-year student in Columbia College interested in  studying economics and computer science. Originally from Toronto, Vera holds start-up experience in the city’s tech venture  sphere. With her experience from three companies, LadderUP, Sitto, and Intrst Financial, she hopes to explore the fields of venture capital and private equity. She also loves visual arts, graphic design and exploring new brunch spots in her free time.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Past Members Section -->
+    <div class="w3-container w3-light-grey" style="padding:128px 16px" id="pastMembers">
+        <h3 class="w3-center">PAST MEMBERS</h3>
+
+        <!-- First Row -->
+        <div class="w3-row-padding" style="margin-top:64px">
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Jonah.png" alt="Jonah">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Jonah Hanig</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Linda.jpg" alt="Linda">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Linda Blanken</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Jake.png" alt="Jake">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Jake Tuckerman</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Noah.jpeg" alt="Noah">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Noah Thaler</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Brandon.jpg" alt="Brandon">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Brandon Mazzeo</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Alex.jpg" alt="Alex">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Alex Jastrzab</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="w3-row-padding" style="margin-top:64px">
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Taronish.jpeg" alt="Taronish">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Taronish Irani</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Jacob.png" alt="Jacob">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Jacob Best</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Dimitri.jpeg" alt="Dimitri">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Dimitri Borgers</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                   <div class="cropSmall">
+                        <img src="Pictures/Alex.jpeg" alt="Alex">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Alex Birkel</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Dillon.png" alt="Dillon">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Dillon Biddiscombe</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 w3-margin-bottom">
+                <div class="w3-card-2">
+                    <div class="cropSmall">
+                        <img src="Pictures/Chris.jpg" alt="Chris">
+                    </div>
+                    <div class="w3-container">
+                        <h4>Chris Hall</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-container" style="padding:128px 16px" id="contact">
+        <h3 class="w3-center">CONTACT</h3>
+        <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+        <div class="w3-row-padding" style="margin-top:64px">
+            <div class="w3-half">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> New York, US</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone:(862) 223-3777/p></p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: spencer.papay@columbia.edu</p>
+                <br>
+                <h4>
+                    Please send a email to address listed above.
+                </h4>
+                <!-- <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+                    <p>
+                        <button class="w3-button w3-black" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </p>
+                </form> -->
+            </div>
+            <div class="w3-half">
+                <img src="Pictures/columbia.jpg" alt="John" style="width:100%">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    </footer>
+
+</body>
+</html>
